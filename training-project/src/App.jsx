@@ -1,11 +1,12 @@
-import React from "react";
-import Home from "./Pages/Home.jsx";
-import "./App.css";
+// import "./App.css";
+import Header from "./components/Header.jsx";
+import AppRoutes from "./Routes/AppRoutes.jsx";
 
 function App() {
   return (
     <>
-      <Home />
+      <Header />
+      <AppRoutes />
     </>
   );
 }
