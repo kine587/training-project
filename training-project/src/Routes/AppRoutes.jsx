@@ -10,8 +10,8 @@ export default function AppRoutes() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/training" element={<TrainingList />} />
-      <Route path="/training/:Id" element={<TrainingDetail />} />
-      <Route path="/Logg" element={<TrainingLogg />} />
+      <Route path="/training/:id" element={<TrainingDetail />} />
+      <Route path="/logg" element={<TrainingLogg />} />
     </Routes>
   );
 }

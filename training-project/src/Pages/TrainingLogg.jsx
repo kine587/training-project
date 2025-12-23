@@ -1,5 +1,5 @@
-import {  useState, useEffect, use } from "react";
-import TrainingList, { trainingList } from "./TrainingList.jsx";
+import {  useState, useEffect } from "react";
+import TrainingList from "./TrainingList.jsx";
 
 export default function TrainingLogg() {
     const [logs, setLogs] = useState([]);

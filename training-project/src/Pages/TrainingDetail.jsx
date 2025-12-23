@@ -1,9 +1,9 @@
 import { useParams, Link } from "react-router-dom";
-import { trainingList} from "../Pages/TrainingList";
+import  TrainingList from "../Pages/TrainingList.jsx";
 
 export default function TrainingDetail() {
     const { Id } = useParams();
-    const trainingList = trainingList.find((t) => t.Id === Id);
+    const trainingList = TrainingList.find((t) => t.Id === Id);
 
     if (!trainingList) {
         return ( 
@@ -13,4 +13,13 @@ export default function TrainingDetail() {
         </div> 
         );
     }
+
+    return (
+        <div>
+            <h2>{trainingList.Title}</h2>
+            <p><strong>Duration:</strong> {trainingList.Duration}</p>
+            <p><strong>Description:</strong> {trainingList.Description}</p>
+            <Link to="/trainingList">Back to Trainings</Link>
+        </div>
+    );
 }
