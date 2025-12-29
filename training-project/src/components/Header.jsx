@@ -6,6 +6,7 @@ export default function Header() {
       <nav>
         <Link to="/">Home</Link>
         <Link to="training">Training</Link>
+        <Link to="training-logg">Training Log</Link>
       </nav>
     </div>
   );
