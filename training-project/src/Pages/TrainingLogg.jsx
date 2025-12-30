@@ -1,5 +1,5 @@
 import {  useState, useEffect } from "react";
-import TrainingList from "./TrainingList.jsx";
+import trainings from "../Data/TrainingData";
 
 export default function TrainingLogg() {
     const [logs, setLogs] = useState([]);
@@ -13,7 +13,7 @@ export default function TrainingLogg() {
     function handleSubmit(e) {
         e.preventDefault();
 
-        const trainings = trainings.find((t) => t.id === trainingId);
+        const trainings = trainings.find((t) => String(t.id) === trainingId);
 
         if (!trainings || !date) return;
 
@@ -38,10 +38,10 @@ export default function TrainingLogg() {
                 <label>
                     Select Training:
                     <select value={trainingId}
-                    onChange={(e) => trainingId(e.target.value)}
+                    onChange={(e) => setTrainingId(e.target.value)}
                     >
                         <option value="">Select training</option>
-                        {TrainingList.map((t) => (
+                        {trainings.map((t) => (
                             <option key={t.id} value={t.id}>
                                 {t.title}
                             </option>
