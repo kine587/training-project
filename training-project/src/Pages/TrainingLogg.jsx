@@ -7,6 +7,18 @@ export default function TrainingLogg() {
     const [date, setDate] = useState("");
 
     useEffect(() => {
+        const storedLogs = localStorage.getItem("trainingLogs");    
+        if (storedLogs) 
+            try {
+        const parsedLogs = JSON.parse(storedLogs);
+        setLogs(parsedLogs);
+            } catch (e) {
+                console.error("Failed to parse training logs from localStorage", e);
+                setLogs([]);
+            }
+    }, []);
+
+    useEffect(() => {
         localStorage.setItem("trainingLogs", JSON.stringify(logs));
     }, [logs]);
 
