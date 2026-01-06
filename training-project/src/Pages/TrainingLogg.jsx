@@ -6,6 +6,7 @@ export default function TrainingLogg() {
     const [trainingId, setTrainingId] = useState("");
     const [date, setDate] = useState("");
 
+    // Load logs from localStorage on component mount
     useEffect(() => {
         const storedLogs = localStorage.getItem("trainingLogs");    
         if (storedLogs) 
@@ -18,10 +19,12 @@ export default function TrainingLogg() {
             }
     }, []);
 
+    // Save logs to localStorage whenever they change
     useEffect(() => {
         localStorage.setItem("trainingLogs", JSON.stringify(logs));
     }, [logs]);
 
+    // Handle form submission to add a new log
     function handleSubmit(e) {
         e.preventDefault();
 
